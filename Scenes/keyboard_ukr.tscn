@@ -1,0 +1,274 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxcc5jm8r5r2j"]
+
+[ext_resource type="Script" path="res://Scripts/keyboard.gd" id="1_he5wt"]
+[ext_resource type="PackedScene" uid="uid://j3lgyhcucd8o" path="res://Scenes/keyboard_button.tscn" id="2_1tctv"]
+[ext_resource type="PackedScene" uid="uid://3pwj13e5d3yg" path="res://Scenes/special_button.tscn" id="3_6g4v0"]
+[ext_resource type="Texture2D" uid="uid://pif3o7paeayh" path="res://Assets/gray_keyboard_button.png" id="4_tkoa5"]
+[ext_resource type="Texture2D" uid="uid://d0us5qq07ebfy" path="res://Assets/backspace.png" id="5_csos3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j7oo5"]
+texture = ExtResource("4_tkoa5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jc0le"]
+texture = ExtResource("4_tkoa5")
+
+[node name="Keyboard_ukr" type="VBoxContainer"]
+clip_contents = true
+anchors_preset = -1
+anchor_left = 0.044
+anchor_top = 0.05
+anchor_right = 0.956
+anchor_bottom = 0.257
+offset_left = -71.68
+offset_right = 71.68
+offset_bottom = 13.49
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("1_he5wt")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Й" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Й"
+
+[node name="Ц" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Ц"
+
+[node name="У" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "У"
+
+[node name="К" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "К"
+
+[node name="Е" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Е"
+
+[node name="Н" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Н"
+
+[node name="Г" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Г"
+
+[node name="Ш" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Ш"
+
+[node name="Щ" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Щ"
+
+[node name="З" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "З"
+
+[node name="Х" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Х"
+
+[node name="Ї" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Ї"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Ф" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Ф"
+
+[node name="І" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "І"
+
+[node name="В" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "В"
+
+[node name="А" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "А"
+
+[node name="П" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "П"
+
+[node name="Р" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Р"
+
+[node name="О" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "О"
+
+[node name="Л" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Л"
+
+[node name="Д" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Д"
+
+[node name="Ж" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Ж"
+
+[node name="Є" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Є"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Enter" parent="HBoxContainer3" instance=ExtResource("3_6g4v0")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_j7oo5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_j7oo5")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_j7oo5")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_j7oo5")
+theme_override_styles/focus = SubResource("StyleBoxTexture_j7oo5")
+text = "Enter
+"
+
+[node name="Я" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Я"
+
+[node name="Ч" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Ч"
+
+[node name="С" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "С"
+
+[node name="М" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "М"
+
+[node name="И" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "И"
+
+[node name="Т" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Т"
+
+[node name="Ь" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Ь"
+
+[node name="Б" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Б"
+
+[node name="Ю" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Ю"
+
+[node name="Ґ" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("2_1tctv")]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+letter = "Ґ"
+
+[node name="Panel" type="Panel" parent="HBoxContainer3"]
+custom_minimum_size = Vector2(63, 78)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jc0le")
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer3/Panel"]
+custom_minimum_size = Vector2(80, 58)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.154
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -0.012001
+offset_right = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_csos3")
+
+[connection signal="pressed" from="HBoxContainer/Й" to="." method="_on_keyboard_button_pressed" binds= ["й"]]
+[connection signal="pressed" from="HBoxContainer/Ц" to="." method="_on_keyboard_button_pressed" binds= ["ц"]]
+[connection signal="pressed" from="HBoxContainer/У" to="." method="_on_keyboard_button_pressed" binds= ["у"]]
+[connection signal="pressed" from="HBoxContainer/К" to="." method="_on_keyboard_button_pressed" binds= ["к"]]
+[connection signal="pressed" from="HBoxContainer/Е" to="." method="_on_keyboard_button_pressed" binds= ["е"]]
+[connection signal="pressed" from="HBoxContainer/Н" to="." method="_on_keyboard_button_pressed" binds= ["н"]]
+[connection signal="pressed" from="HBoxContainer/Г" to="." method="_on_keyboard_button_pressed" binds= ["г"]]
+[connection signal="pressed" from="HBoxContainer/Ш" to="." method="_on_keyboard_button_pressed" binds= ["ш"]]
+[connection signal="pressed" from="HBoxContainer/Щ" to="." method="_on_keyboard_button_pressed" binds= ["щ"]]
+[connection signal="pressed" from="HBoxContainer/З" to="." method="_on_keyboard_button_pressed" binds= ["з"]]
+[connection signal="pressed" from="HBoxContainer/Х" to="." method="_on_keyboard_button_pressed" binds= ["х"]]
+[connection signal="pressed" from="HBoxContainer/Ї" to="." method="_on_keyboard_button_pressed" binds= ["ї"]]
+[connection signal="pressed" from="HBoxContainer2/Ф" to="." method="_on_keyboard_button_pressed" binds= ["ф"]]
+[connection signal="pressed" from="HBoxContainer2/І" to="." method="_on_keyboard_button_pressed" binds= ["і"]]
+[connection signal="pressed" from="HBoxContainer2/В" to="." method="_on_keyboard_button_pressed" binds= ["в"]]
+[connection signal="pressed" from="HBoxContainer2/А" to="." method="_on_keyboard_button_pressed" binds= ["а"]]
+[connection signal="pressed" from="HBoxContainer2/П" to="." method="_on_keyboard_button_pressed" binds= ["п"]]
+[connection signal="pressed" from="HBoxContainer2/Р" to="." method="_on_keyboard_button_pressed" binds= ["р"]]
+[connection signal="pressed" from="HBoxContainer2/О" to="." method="_on_keyboard_button_pressed" binds= ["о"]]
+[connection signal="pressed" from="HBoxContainer2/Л" to="." method="_on_keyboard_button_pressed" binds= ["Л"]]
+[connection signal="pressed" from="HBoxContainer2/Д" to="." method="_on_keyboard_button_pressed" binds= ["д"]]
+[connection signal="pressed" from="HBoxContainer2/Ж" to="." method="_on_keyboard_button_pressed" binds= ["ж"]]
+[connection signal="pressed" from="HBoxContainer2/Є" to="." method="_on_keyboard_button_pressed" binds= ["є"]]
+[connection signal="pressed" from="HBoxContainer3/Enter" to="." method="_on_enter_pressed"]
+[connection signal="pressed" from="HBoxContainer3/Я" to="." method="_on_keyboard_button_pressed" binds= ["я"]]
+[connection signal="pressed" from="HBoxContainer3/Ч" to="." method="_on_keyboard_button_pressed" binds= ["ч"]]
+[connection signal="pressed" from="HBoxContainer3/С" to="." method="_on_keyboard_button_pressed" binds= ["с"]]
+[connection signal="pressed" from="HBoxContainer3/М" to="." method="_on_keyboard_button_pressed" binds= ["м"]]
+[connection signal="pressed" from="HBoxContainer3/И" to="." method="_on_keyboard_button_pressed" binds= ["и"]]
+[connection signal="pressed" from="HBoxContainer3/Т" to="." method="_on_keyboard_button_pressed" binds= ["т"]]
+[connection signal="pressed" from="HBoxContainer3/Ь" to="." method="_on_keyboard_button_pressed" binds= ["ь"]]
+[connection signal="pressed" from="HBoxContainer3/Б" to="." method="_on_keyboard_button_pressed" binds= ["б"]]
+[connection signal="pressed" from="HBoxContainer3/Ю" to="." method="_on_keyboard_button_pressed" binds= ["ю"]]
+[connection signal="pressed" from="HBoxContainer3/Ґ" to="." method="_on_keyboard_button_pressed" binds= ["ґ"]]
+[connection signal="pressed" from="HBoxContainer3/Panel/TextureButton" to="." method="_on_backspace_button_pressed"]

@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://hvktusc5e24g"]
+
+[ext_resource type="Script" path="res://Scripts/validation_alert.gd" id="1_s6avx"]
+[ext_resource type="Texture2D" uid="uid://bwnls662k2kax" path="res://Assets/broken-noise.png" id="2_6dq0o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4u6ii"]
+bg_color = Color(0.764706, 0.764706, 0.764706, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color(0.45098, 0.45098, 0.45098, 1)
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0.364706, 0.364706, 0.364706, 0.498039)
+shadow_size = 3
+shadow_offset = Vector2(15, 15)
+
+[sub_resource type="Theme" id="Theme_qb5c1"]
+Panel/styles/panel = SubResource("StyleBoxFlat_4u6ii")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6noft"]
+blend_mode = 2
+
+[node name="ValidationAlert" type="Panel"]
+custom_minimum_size = Vector2(200, 45)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.0
+offset_top = 23.0
+offset_right = 100.0
+offset_bottom = 68.0
+grow_horizontal = 2
+theme = SubResource("Theme_qb5c1")
+script = ExtResource("1_s6avx")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "NOT enough letters"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_6noft")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6dq0o")
+expand_mode = 1
+stretch_mode = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

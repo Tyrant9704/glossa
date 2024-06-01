@@ -1,0 +1,195 @@
+[gd_scene load_steps=13 format=3 uid="uid://bne3b5e8nj5qs"]
+
+[ext_resource type="Script" path="res://Scenes/pause.gd" id="1_gj7hg"]
+[ext_resource type="FontFile" uid="uid://bs0twiworrwou" path="res://Assets/Poppins-SemiBold.ttf" id="2_dmcbi"]
+[ext_resource type="StyleBox" uid="uid://buvt7aukpmqqw" path="res://Themes/menu_panel.tres" id="3_43mwk"]
+[ext_resource type="Texture2D" uid="uid://bwnls662k2kax" path="res://Assets/broken-noise.png" id="4_txrdi"]
+
+[sub_resource type="Theme" id="Theme_0rrlh"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0.176471, 0.176471, 0.176471, 0.788235)
+Label/constants/outline_size = 10
+Label/constants/shadow_offset_x = 5
+Label/constants/shadow_offset_y = 5
+Label/constants/shadow_outline_size = 10
+Label/font_sizes/font_size = 50
+Label/fonts/font = ExtResource("2_dmcbi")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dphjj"]
+bg_color = Color(0.745098, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 0.686275)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 10
+shadow_color = Color(0.572549, 0.572549, 0.572549, 1)
+shadow_size = 4
+shadow_offset = Vector2(3.91, 8.31)
+anti_aliasing_size = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ym838"]
+bg_color = Color(0.745098, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 0.686275)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 10
+shadow_color = Color(0.572549, 0.572549, 0.572549, 1)
+shadow_size = 4
+shadow_offset = Vector2(3.91, 8.31)
+anti_aliasing_size = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhb6q"]
+bg_color = Color(0.745098, 0, 0, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 0.686275)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 10
+shadow_color = Color(0.572549, 0.572549, 0.572549, 1)
+shadow_size = 4
+shadow_offset = Vector2(3.91, 8.31)
+anti_aliasing_size = 4.0
+
+[sub_resource type="Theme" id="Theme_8roqy"]
+default_font_size = 30
+Button/colors/font_color = Color(0.839216, 0.839216, 0.839216, 1)
+Button/colors/font_outline_color = Color(0.152941, 0.152941, 0.152941, 1)
+Button/constants/outline_size = 15
+Button/font_sizes/font_size = 52
+Button/fonts/font = ExtResource("2_dmcbi")
+Button/styles/hover = SubResource("StyleBoxFlat_dphjj")
+Button/styles/normal = SubResource("StyleBoxFlat_ym838")
+Button/styles/pressed = SubResource("StyleBoxFlat_mhb6q")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_luspk"]
+bg_color = Color(0.913725, 0.768627, 0.415686, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 0.686275)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 10
+shadow_color = Color(0.572549, 0.572549, 0.572549, 1)
+shadow_size = 4
+shadow_offset = Vector2(3.91, 8.31)
+anti_aliasing_size = 4.0
+
+[sub_resource type="Theme" id="Theme_kakx0"]
+default_font_size = 30
+Button/colors/font_color = Color(0.839216, 0.839216, 0.839216, 1)
+Button/colors/font_outline_color = Color(0.152941, 0.152941, 0.152941, 1)
+Button/constants/outline_size = 15
+Button/font_sizes/font_size = 52
+Button/fonts/font = ExtResource("2_dmcbi")
+Button/styles/hover = SubResource("StyleBoxFlat_luspk")
+Button/styles/normal = SubResource("StyleBoxFlat_luspk")
+Button/styles/pressed = SubResource("StyleBoxFlat_luspk")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_sbw1e"]
+blend_mode = 2
+
+[node name="pause" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0196078, 0.0196078, 0.0196078, 0.384314)
+script = ExtResource("1_gj7hg")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+theme = SubResource("Theme_0rrlh")
+theme_override_styles/panel = ExtResource("3_43mwk")
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.116
+anchor_right = 0.996
+anchor_bottom = 0.388
+offset_left = -6.0
+offset_top = 1.0
+offset_right = 13.0
+offset_bottom = -5.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "Are you sure?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.98
+offset_left = 2.0
+offset_top = 117.0
+offset_right = 2.0
+offset_bottom = -28.0
+theme_override_constants/separation = 140
+alignment = 1
+
+[node name="yes" type="Button" parent="CenterContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 2
+theme = SubResource("Theme_8roqy")
+text = "Yes"
+
+[node name="no" type="Button" parent="CenterContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(150, 100)
+layout_mode = 2
+theme = SubResource("Theme_kakx0")
+text = "No"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("CanvasItemMaterial_sbw1e")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_txrdi")
+expand_mode = 1
+stretch_mode = 1
+
+[connection signal="pressed" from="CenterContainer/Panel/HBoxContainer/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="CenterContainer/Panel/HBoxContainer/no" to="." method="_on_no_pressed"]

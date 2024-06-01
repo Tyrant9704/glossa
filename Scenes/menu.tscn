@@ -1,0 +1,341 @@
+[gd_scene load_steps=25 format=3 uid="uid://br7ues1qt4d8h"]
+
+[ext_resource type="Script" path="res://Scripts/menu.gd" id="1_knarr"]
+[ext_resource type="Texture2D" uid="uid://d0f2uca5fbjl7" path="res://Assets/gplay.png" id="2_atx7m"]
+[ext_resource type="FontFile" uid="uid://bs0twiworrwou" path="res://Assets/Poppins-SemiBold.ttf" id="3_kyh5j"]
+[ext_resource type="Theme" uid="uid://d3cglxxqcdx2c" path="res://Themes/menu_button.tres" id="4_74r75"]
+[ext_resource type="Script" path="res://Scripts/vibrations.gd" id="5_we2g1"]
+[ext_resource type="Texture2D" uid="uid://dgxmmmkn5g1l" path="res://Assets/sound.png" id="6_d3s1b"]
+[ext_resource type="Texture2D" uid="uid://qop1cewwmhmm" path="res://Assets/mute.png" id="7_q80mk"]
+[ext_resource type="Texture2D" uid="uid://8qeakrcnio8f" path="res://Assets/vibrate.png" id="8_rjy24"]
+[ext_resource type="Texture2D" uid="uid://cf77tqp26uo30" path="res://Assets/vibrate_not.png" id="9_okdb8"]
+[ext_resource type="Texture2D" uid="uid://cuyw3db3njyit" path="res://Assets/on-off-button.png" id="10_ekkhr"]
+[ext_resource type="StyleBox" uid="uid://buvt7aukpmqqw" path="res://Themes/menu_panel.tres" id="11_x1aya"]
+[ext_resource type="Texture2D" uid="uid://bxtflt6ncp44" path="res://Assets/close.png" id="12_2exi7"]
+[ext_resource type="Texture2D" uid="uid://hkwjv3asbmk4" path="res://Assets/poland.png" id="13_2pxt8"]
+[ext_resource type="Texture2D" uid="uid://cqbdpj206fmmq" path="res://Assets/united-states.png" id="14_p1wc0"]
+[ext_resource type="Texture2D" uid="uid://b8k1eo4225bi8" path="res://Assets/ukraine.png" id="15_hxdg0"]
+[ext_resource type="Texture2D" uid="uid://bwnls662k2kax" path="res://Assets/broken-noise.png" id="16_ikyrx"]
+
+[sub_resource type="Gradient" id="Gradient_70uiu"]
+interpolation_mode = 2
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.113725, 0.411765, 0.196078, 1, 0.501961, 0.72549, 0.0941176, 1, 0.113725, 0.411765, 0.196078, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hmw7d"]
+gradient = SubResource("Gradient_70uiu")
+use_hdr = true
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qvi8y"]
+blend_mode = 2
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vnnwj"]
+blend_mode = 4
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7rnsf"]
+blend_mode = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4ap4"]
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(1, 1, 1, 0.686275)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 10
+shadow_color = Color(0.572549, 0.572549, 0.572549, 1)
+shadow_size = 4
+shadow_offset = Vector2(3.91, 8.31)
+anti_aliasing_size = 4.0
+
+[sub_resource type="Theme" id="Theme_p51nv"]
+default_font = ExtResource("3_kyh5j")
+default_font_size = 50
+Button/colors/font_color = Color(0.929412, 0.929412, 0.929412, 1)
+Button/colors/font_outline_color = Color(0.188235, 0.188235, 0.188235, 1)
+Button/constants/h_separation = 15
+Button/constants/icon_max_width = 60
+Button/constants/outline_size = 15
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("3_kyh5j")
+Button/styles/normal = SubResource("StyleBoxFlat_k4ap4")
+Button/styles/pressed = SubResource("StyleBoxFlat_k4ap4")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_aaap8"]
+blend_mode = 2
+
+[node name="menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_knarr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_hmw7d")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+material = SubResource("CanvasItemMaterial_qvi8y")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_atx7m")
+stretch_mode = 1
+
+[node name="title_name" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.011
+anchor_top = 0.2
+anchor_right = 1.0
+anchor_bottom = 0.372
+offset_left = -7.92
+offset_top = -8.0
+offset_bottom = -0.160004
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="title_name"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.207843)
+theme_override_colors/font_outline_color = Color(0.494118, 0.494118, 0.494118, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 1
+theme_override_constants/shadow_outline_size = 3
+theme_override_constants/line_spacing = -30
+theme_override_fonts/font = ExtResource("3_kyh5j")
+theme_override_font_sizes/font_size = 147
+text = "Glossa"
+
+[node name="button_container" type="VBoxContainer" parent="."]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.178
+anchor_top = 0.419
+anchor_right = 0.822
+anchor_bottom = 0.9
+offset_left = -0.160004
+offset_top = -0.320068
+offset_right = 0.159973
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="start" type="Button" parent="button_container"]
+custom_minimum_size = Vector2(0, 118)
+layout_mode = 2
+theme = ExtResource("4_74r75")
+text = "Start"
+script = ExtResource("5_we2g1")
+
+[node name="options" type="Button" parent="button_container"]
+custom_minimum_size = Vector2(0, 118)
+layout_mode = 2
+theme = ExtResource("4_74r75")
+text = "Options"
+script = ExtResource("5_we2g1")
+
+[node name="stats" type="Button" parent="button_container"]
+custom_minimum_size = Vector2(0, 118)
+layout_mode = 2
+theme = ExtResource("4_74r75")
+text = "Statistics"
+script = ExtResource("5_we2g1")
+
+[node name="utilities" type="HBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.078
+offset_left = 20.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 0.159996
+theme_override_constants/separation = 373
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="utilities"]
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="sound" type="TextureButton" parent="utilities/HBoxContainer"]
+modulate = Color(0.0352941, 0.0352941, 0.0352941, 1)
+material = SubResource("CanvasItemMaterial_vnnwj")
+clip_contents = true
+custom_minimum_size = Vector2(79.85, 50)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("6_d3s1b")
+texture_pressed = ExtResource("7_q80mk")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="vibrations" type="TextureButton" parent="utilities/HBoxContainer"]
+modulate = Color(0.0352941, 0.0352941, 0.0352941, 1)
+material = SubResource("CanvasItemMaterial_vnnwj")
+clip_contents = true
+custom_minimum_size = Vector2(79.85, 50)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("8_rjy24")
+texture_pressed = ExtResource("9_okdb8")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="exit" type="TextureButton" parent="utilities"]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("CanvasItemMaterial_7rnsf")
+clip_contents = true
+custom_minimum_size = Vector2(79.85, 50)
+layout_mode = 2
+toggle_mode = true
+texture_normal = ExtResource("10_ekkhr")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="language_menu" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 80.0
+offset_right = -50.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("11_x1aya")
+metadata/_edit_lock_ = true
+
+[node name="close_menu" type="TextureButton" parent="language_menu"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 100.0
+offset_bottom = 100.0
+texture_normal = ExtResource("12_2exi7")
+texture_pressed = ExtResource("12_2exi7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="language_menu"]
+layout_direction = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0548387
+anchor_top = 0.110909
+anchor_right = 0.0548387
+anchor_bottom = 0.110909
+offset_left = 2.0
+offset_right = 551.0
+offset_bottom = 927.0
+theme_override_constants/separation = 300
+alignment = 1
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="language_menu/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.929412, 0.929412, 0.929412, 1)
+theme_override_colors/font_outline_color = Color(0.298039, 0.298039, 0.298039, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_kyh5j")
+theme_override_font_sizes/font_size = 46
+text = "Select language"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="language_menu/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="buttons_container" type="GridContainer" parent="language_menu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+columns = 2
+
+[node name="polish" type="Button" parent="language_menu/VBoxContainer/HBoxContainer/buttons_container"]
+layout_mode = 2
+theme = SubResource("Theme_p51nv")
+text = "Polski"
+icon = ExtResource("13_2pxt8")
+flat = true
+script = ExtResource("5_we2g1")
+
+[node name="english" type="Button" parent="language_menu/VBoxContainer/HBoxContainer/buttons_container"]
+layout_mode = 2
+theme = SubResource("Theme_p51nv")
+text = "English"
+icon = ExtResource("14_p1wc0")
+flat = true
+script = ExtResource("5_we2g1")
+
+[node name="ukraine" type="Button" parent="language_menu/VBoxContainer/HBoxContainer/buttons_container"]
+layout_mode = 2
+theme = SubResource("Theme_p51nv")
+text = "Українська"
+icon = ExtResource("15_hxdg0")
+flat = true
+script = ExtResource("5_we2g1")
+
+[node name="credits" type="Button" parent="language_menu/VBoxContainer"]
+custom_minimum_size = Vector2(290.42, 100)
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_74r75")
+text = "Credits"
+
+[node name="TextureRect" type="TextureRect" parent="language_menu"]
+material = SubResource("CanvasItemMaterial_aaap8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("16_ikyrx")
+expand_mode = 1
+stretch_mode = 1
+
+[connection signal="pressed" from="button_container/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="button_container/options" to="." method="_on_options_pressed"]
+[connection signal="toggled" from="utilities/HBoxContainer/sound" to="." method="_on_sound_toggled"]
+[connection signal="toggled" from="utilities/HBoxContainer/vibrations" to="." method="_on_vibrations_toggled"]
+[connection signal="pressed" from="utilities/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="language_menu/close_menu" to="." method="_on_close_menu_pressed"]
+[connection signal="pressed" from="language_menu/VBoxContainer/HBoxContainer/buttons_container/polish" to="." method="_on_language_select_pressed" binds= ["pol"]]
+[connection signal="pressed" from="language_menu/VBoxContainer/HBoxContainer/buttons_container/english" to="." method="_on_language_select_pressed" binds= ["eng"]]
+[connection signal="pressed" from="language_menu/VBoxContainer/HBoxContainer/buttons_container/ukraine" to="." method="_on_language_select_pressed" binds= ["ukr"]]
+[connection signal="pressed" from="language_menu/VBoxContainer/credits" to="." method="_on_credits_pressed"]

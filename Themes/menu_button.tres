@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://d3cglxxqcdx2c"]
+
+[ext_resource type="FontFile" uid="uid://bs0twiworrwou" path="res://Assets/Poppins-SemiBold.ttf" id="1_62oga"]
+[ext_resource type="StyleBox" uid="uid://bw0xowccn04hb" path="res://Themes/buttons_for_menu.tres" id="2_ckn5x"]
+
+[resource]
+default_font_size = 55
+Button/colors/font_color = Color(0.839216, 0.839216, 0.839216, 1)
+Button/colors/font_outline_color = Color(0.152941, 0.152941, 0.152941, 1)
+Button/constants/outline_size = 15
+Button/font_sizes/font_size = 52
+Button/fonts/font = ExtResource("1_62oga")
+Button/styles/hover = ExtResource("2_ckn5x")
+Button/styles/normal = ExtResource("2_ckn5x")
+Button/styles/pressed = ExtResource("2_ckn5x")

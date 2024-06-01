@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://j3lgyhcucd8o"]
+
+[ext_resource type="Script" path="res://Scripts/keyboard_button.gd" id="1_c6s5i"]
+[ext_resource type="Texture2D" uid="uid://b1ifhex26c588" path="res://Assets/green_keyboard_button.png" id="1_se8it"]
+[ext_resource type="Texture2D" uid="uid://rx3yhpwom4ys" path="res://Assets/yellow_keyboard_button.png" id="2_02vn3"]
+[ext_resource type="Texture2D" uid="uid://pif3o7paeayh" path="res://Assets/gray_keyboard_button.png" id="3_8xwev"]
+[ext_resource type="Texture2D" uid="uid://b5q1ixjux1od4" path="res://Assets/black_keyboard_button.png" id="4_dhi2y"]
+[ext_resource type="FontFile" uid="uid://bs0twiworrwou" path="res://Assets/Poppins-SemiBold.ttf" id="5_48dlo"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a2aer"]
+texture = ExtResource("1_se8it")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a02c0"]
+texture = ExtResource("2_02vn3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g0xqp"]
+texture = ExtResource("3_8xwev")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dch3q"]
+texture = ExtResource("4_dhi2y")
+
+[sub_resource type="Theme" id="Theme_4x5ky"]
+correct_right_placement/base_type = &"Button"
+correct_right_placement/styles/disabled = SubResource("StyleBoxTexture_a2aer")
+correct_right_placement/styles/focus = SubResource("StyleBoxTexture_a2aer")
+correct_right_placement/styles/hover = SubResource("StyleBoxTexture_a2aer")
+correct_right_placement/styles/normal = SubResource("StyleBoxTexture_a2aer")
+correct_right_placement/styles/panel = SubResource("StyleBoxTexture_a2aer")
+correct_right_placement/styles/pressed = SubResource("StyleBoxTexture_a2aer")
+correct_wrong_placement/base_type = &"Button"
+correct_wrong_placement/styles/disabled = SubResource("StyleBoxTexture_a02c0")
+correct_wrong_placement/styles/focus = SubResource("StyleBoxTexture_a02c0")
+correct_wrong_placement/styles/hover = SubResource("StyleBoxTexture_a02c0")
+correct_wrong_placement/styles/normal = SubResource("StyleBoxTexture_a02c0")
+correct_wrong_placement/styles/panel = SubResource("StyleBoxTexture_a02c0")
+correct_wrong_placement/styles/pressed = SubResource("StyleBoxTexture_a02c0")
+letter_available/base_type = &"Button"
+letter_available/styles/disabled = SubResource("StyleBoxTexture_g0xqp")
+letter_available/styles/focus = SubResource("StyleBoxTexture_g0xqp")
+letter_available/styles/hover = SubResource("StyleBoxTexture_g0xqp")
+letter_available/styles/normal = SubResource("StyleBoxTexture_g0xqp")
+letter_available/styles/panel = SubResource("StyleBoxTexture_g0xqp")
+letter_available/styles/pressed = SubResource("StyleBoxTexture_g0xqp")
+used/base_type = &"Button"
+used/styles/disabled = SubResource("StyleBoxTexture_dch3q")
+used/styles/focus = SubResource("StyleBoxTexture_dch3q")
+used/styles/hover = SubResource("StyleBoxTexture_dch3q")
+used/styles/normal = SubResource("StyleBoxTexture_dch3q")
+used/styles/panel = SubResource("StyleBoxTexture_dch3q")
+used/styles/pressed = SubResource("StyleBoxTexture_dch3q")
+
+[node name="KeyboardButton" type="Button"]
+custom_minimum_size = Vector2(43, 58)
+offset_right = 8.0
+offset_bottom = 8.0
+theme = SubResource("Theme_4x5ky")
+theme_override_colors/font_color = Color(0.956863, 0.956863, 0.956863, 1)
+theme_override_colors/font_outline_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("5_48dlo")
+theme_override_font_sizes/font_size = 30
+text = "A"
+script = ExtResource("1_c6s5i")

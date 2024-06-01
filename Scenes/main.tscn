@@ -1,0 +1,222 @@
+[gd_scene load_steps=21 format=3 uid="uid://8rx13ttaug03"]
+
+[ext_resource type="Texture2D" uid="uid://d0f2uca5fbjl7" path="res://Assets/gplay.png" id="1_py5pm"]
+[ext_resource type="Script" path="res://Scripts/rows_controller.gd" id="2_7biew"]
+[ext_resource type="PackedScene" uid="uid://bc68rxh8klkr8" path="res://Resources/Scenes/row.tscn" id="3_nho0l"]
+[ext_resource type="Script" path="res://Scripts/word_pool.gd" id="4_ecfe6"]
+[ext_resource type="PackedScene" uid="uid://bne3b5e8nj5qs" path="res://Resources/Scenes/pause.tscn" id="5_dnktm"]
+[ext_resource type="PackedScene" uid="uid://b4frixfo5cdyn" path="res://Resources/Scenes/results_ui.tscn" id="6_dvrv3"]
+[ext_resource type="PackedScene" uid="uid://hvktusc5e24g" path="res://Resources/Scenes/validation_alert.tscn" id="7_t4ttx"]
+[ext_resource type="FontFile" uid="uid://bs0twiworrwou" path="res://Assets/Poppins-SemiBold.ttf" id="8_pol1t"]
+[ext_resource type="StyleBox" uid="uid://buvt7aukpmqqw" path="res://Themes/menu_panel.tres" id="9_pms1o"]
+[ext_resource type="PackedScene" uid="uid://cxcc5jm8r5r2j" path="res://Resources/Scenes/keyboard_ukr.tscn" id="10_8rcur"]
+[ext_resource type="PackedScene" uid="uid://g0o5v2au4mu6" path="res://Resources/Scenes/keyboard.tscn" id="11_ibr16"]
+[ext_resource type="PackedScene" uid="uid://b28suyjy18hk7" path="res://Resources/Scenes/keyboard_pol.tscn" id="12_6ttly"]
+[ext_resource type="AudioStream" uid="uid://qwqdrx6pmeif" path="res://Assets/click-button-140881.mp3" id="13_y6o3m"]
+[ext_resource type="AudioStream" uid="uid://ddfherc1hxoab" path="res://Assets/error-10-206498.mp3" id="14_1cavr"]
+[ext_resource type="Texture2D" uid="uid://bxtflt6ncp44" path="res://Assets/close.png" id="15_6ksqd"]
+[ext_resource type="Script" path="res://Scripts/vibrations.gd" id="16_4n76c"]
+
+[sub_resource type="Gradient" id="Gradient_pvqum"]
+interpolation_mode = 2
+interpolation_color_space = 1
+colors = PackedColorArray(0.114825, 0.411832, 0.196388, 1, 0.501961, 0.72549, 0.0941176, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_udjpt"]
+gradient = SubResource("Gradient_pvqum")
+use_hdr = true
+fill_from = Vector2(1, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7mr4x"]
+blend_mode = 2
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Theme" id="Theme_jt44y"]
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0.176471, 0.176471, 0.176471, 0.788235)
+Label/constants/outline_size = 10
+Label/constants/shadow_offset_x = 5
+Label/constants/shadow_offset_y = 5
+Label/constants/shadow_outline_size = 10
+Label/font_sizes/font_size = 50
+Label/fonts/font = ExtResource("8_pol1t")
+
+[node name="main" type="Node"]
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_udjpt")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect2"]
+material = SubResource("CanvasItemMaterial_7mr4x")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_py5pm")
+stretch_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+clip_contents = true
+layout_direction = 1
+anchors_preset = -1
+anchor_top = 0.07
+anchor_right = 1.0
+anchor_bottom = 0.945
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 70
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 207
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+alignment = 1
+script = ExtResource("2_7biew")
+
+[node name="Row" parent="MarginContainer/VBoxContainer/CenterContainer/Rows" instance=ExtResource("3_nho0l")]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Row2" parent="MarginContainer/VBoxContainer/CenterContainer/Rows" instance=ExtResource("3_nho0l")]
+layout_mode = 2
+alignment = 1
+
+[node name="Row3" parent="MarginContainer/VBoxContainer/CenterContainer/Rows" instance=ExtResource("3_nho0l")]
+layout_mode = 2
+alignment = 1
+
+[node name="Row4" parent="MarginContainer/VBoxContainer/CenterContainer/Rows" instance=ExtResource("3_nho0l")]
+layout_mode = 2
+alignment = 1
+
+[node name="Row5" parent="MarginContainer/VBoxContainer/CenterContainer/Rows" instance=ExtResource("3_nho0l")]
+layout_mode = 2
+alignment = 1
+
+[node name="WordPool" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_ecfe6")
+
+[node name="pause" parent="." instance=ExtResource("5_dnktm")]
+unique_name_in_owner = true
+visible = false
+
+[node name="ResultsUI" parent="." instance=ExtResource("6_dvrv3")]
+unique_name_in_owner = true
+visible = false
+win_color = Color(0, 0.715509, 0, 1)
+lose_color = Color(1, 0.247059, 0.188235, 1)
+
+[node name="ValidationAlert" parent="." instance=ExtResource("7_t4ttx")]
+unique_name_in_owner = true
+visible = false
+anchors_preset = -1
+anchor_left = 0.0
+anchor_top = 0.231
+anchor_right = 1.0
+anchor_bottom = 0.381
+offset_left = 48.0
+offset_top = 0.320007
+offset_right = -64.0
+offset_bottom = 2.31998
+theme = SubResource("Theme_jt44y")
+theme_override_styles/panel = ExtResource("9_pms1o")
+
+[node name="Keyboard_ukr" parent="." groups=["keyboard"] instance=ExtResource("10_8rcur")]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.681
+anchor_right = 1.0
+anchor_bottom = 0.881
+offset_left = 40.0
+offset_top = -0.679993
+offset_right = 120.0
+offset_bottom = 67.3199
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(0.8, 0.8)
+
+[node name="Keyboard_standard" parent="." groups=["keyboard"] instance=ExtResource("11_ibr16")]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.65
+anchor_right = 1.0
+anchor_bottom = 0.893
+offset_left = 40.0
+offset_top = 0.0
+offset_right = -14.0
+offset_bottom = 12.96
+scale = Vector2(0.96, 0.96)
+size_flags_horizontal = 4
+
+[node name="Keyboard_pol" parent="." groups=["keyboard"] instance=ExtResource("12_6ttly")]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.619
+anchor_right = 1.0
+anchor_bottom = 0.862
+offset_left = 40.0
+offset_top = -0.319946
+offset_right = -14.0
+offset_bottom = 12.6399
+scale = Vector2(0.96, 0.96)
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("13_y6o3m")
+max_polyphony = 3
+
+[node name="error" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("14_1cavr")
+
+[node name="exit" type="Button" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(100, 100)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 110.0
+offset_bottom = 110.0
+icon = ExtResource("15_6ksqd")
+flat = true
+expand_icon = true
+script = ExtResource("16_4n76c")
+
+[connection signal="backspace_pressed" from="Keyboard_ukr" to="MarginContainer/VBoxContainer/CenterContainer/Rows" method="_on_keyboard_backspace_pressed"]
+[connection signal="enter_pressed" from="Keyboard_ukr" to="MarginContainer/VBoxContainer/CenterContainer/Rows" method="_on_keyboard_enter_pressed"]
+[connection signal="letter_pressed" from="Keyboard_ukr" to="MarginContainer/VBoxContainer/CenterContainer/Rows" method="_on_keyboard_letter_pressed"]
+[connection signal="backspace_pressed" from="Keyboard_standard" to="MarginContainer/VBoxContainer/CenterContainer/Rows" method="_on_keyboard_backspace_pressed"]
+[connection signal="enter_pressed" from="Keyboard_standard" to="MarginContainer/VBoxContainer/CenterContainer/Rows" method="_on_keyboard_enter_pressed"]
+[connection signal="letter_pressed" from="Keyboard_standard" to="MarginContainer/VBoxContainer/CenterContainer/Rows" method="_on_keyboard_letter_pressed"]
+[connection signal="backspace_pressed" from="Keyboard_pol" to="MarginContainer/VBoxContainer/CenterContainer/Rows" method="_on_keyboard_backspace_pressed"]
+[connection signal="enter_pressed" from="Keyboard_pol" to="MarginContainer/VBoxContainer/CenterContainer/Rows" method="_on_keyboard_enter_pressed"]
+[connection signal="letter_pressed" from="Keyboard_pol" to="MarginContainer/VBoxContainer/CenterContainer/Rows" method="_on_keyboard_letter_pressed"]
+[connection signal="pressed" from="exit" to="MarginContainer/VBoxContainer/CenterContainer/Rows" method="_on_exit_pressed"]
